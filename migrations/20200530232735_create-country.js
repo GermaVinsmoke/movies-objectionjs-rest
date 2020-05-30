@@ -1,7 +1,7 @@
 exports.up = async function(knex) {
 	await knex.schema.createTable('country', table => {
 		table.increments('country_id');
-		table.string('country_name');
+		table.string('country_name').notNullable();
 	});
 
 	await knex.schema.createTable('production_company', table => {
